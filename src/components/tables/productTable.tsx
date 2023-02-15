@@ -2,11 +2,15 @@ import { Product } from "@prisma/client";
 import add_product from '../../assets/add_product.png'
 
 type ProductTableProps = {
-    data: Product[];
+    data: Product[] | undefined;
 }
 
 export const ProductTable = ({ data } : ProductTableProps) => {
     
+    const onCreateEntry = () => {}
+    const onUpdateEntry = () => {}
+    const onDeleteEntry = () => {}
+
     return(
         <div className="relative overflow-x-auto shadow-md rounded-lg border border-gray-900">
             <table className="w-full text-lg text-center text-gray-900">

@@ -16,4 +16,20 @@ export const productRouter = createTRPCRouter({
     })
   }),
 
+  getAllPaginated: protectedProcedure
+    .input(z.object({ selectedPage: z.number() }))
+    .query(({ input, ctx }) => {
+      return ctx.prisma.product.findMany({
+        select: {
+          reference: true,
+          name: true,
+          buyingPrice: true,
+          sellingPrice: true,
+          quantity: true,
+        },
+        take: 10,
+        skip: (input.selectedPage * 10) - 10
+      })
+    })
+
 });

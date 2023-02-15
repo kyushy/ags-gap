@@ -4,7 +4,6 @@ import { GetServerSideProps } from "next/types"
 import { api } from "../utils/api";
 import { ProductTable } from "../components/tables/productTable";
 import { Spinner } from "../components/ui/spinner";
-import { SearchBar } from "../components/form/searchbar";
 import { useRouter } from "next/router";
 import { Header } from "../components/layouts/header";
 
