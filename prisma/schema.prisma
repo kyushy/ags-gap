@@ -77,8 +77,8 @@ model Customer {
 model Product {
     reference       String  @id @unique
     name            String
-    buyingPrice     Decimal?
-    sellingPrice    Decimal?
-    quantity        Int?
+    buyingPrice     Float   @default(0)
+    sellingPrice    Float   @default(0)
+    quantity        Int     @default(0)
 }
 
