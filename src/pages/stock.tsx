@@ -14,7 +14,7 @@ import { ProductDeleteModal } from "../components/modal/product/product-delete";
 
 const Stock : NextPage = () => {
   const { search } = useRouter().query
-  const { data: products, isLoading: loadingProducts } = search ? api.product.getAll.useQuery() : api.product.getAll.useQuery()
+  const { data: products, isLoading: loadingProducts } = search ? api.product.search.useQuery({ searchInput: search }) : api.product.getAll.useQuery()
   const { data: totalValue, isLoading: loadingPrices } = api.product.stockValue.useQuery();
 
   const [showCreateModal, setShowCreateModal] = useState<boolean>(false)
@@ -53,7 +53,7 @@ const Stock : NextPage = () => {
             : 
             <Spinner />
           }
-          <div className="flex justify-around bg-[#7B899F] rounded-md w-2/12 py-2 mt-4 border border-black text-lg italic">
+          <div className="flex justify-around bg-[#7B899F] rounded-md w-3/12 2xl:w-2/12 py-2 mt-4 border border-black text-lg italic">
             <div>Valeur totale du stock : </div>
             <div>{!loadingPrices && totalValue}€</div>
           </div>

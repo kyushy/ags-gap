@@ -16,6 +16,14 @@ export const productRouter = createTRPCRouter({
       })
   }),
 
+  search: protectedProcedure
+    .input(z.object({ searchInput: z.string() }))
+    .query(({ input, ctx }) => {
+      return ctx.prisma.product.findMany({
+        where: { reference: { contains: input.searchInput } }
+      })
+  }),
+
   stockValue: protectedProcedure.query(async ({ ctx }) => {
     const products = await ctx.prisma.product.findMany({
       select: {
