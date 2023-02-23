@@ -22,7 +22,7 @@ export const CustomerTable = ({ data, onClickAdd, onClickEdit, onClickDelete } :
                         <th scope="col" className="px-6 py-2 ">Téléphone</th>
                         <th scope="col" className="px-6 py-2">Immatriculation(s)</th>
                         <th scope="col" className="px-6 py-2 flex justify-end">
-                            <img src={add_client.src} className="h-8 cursor-pointer" onClick={() => onClickAdd()}/>
+                            <img src={add_client.src} className="h-8 cursor-pointer" alt="add_customer" onClick={() => onClickAdd()}/>
                         </th>
                     </tr>
                 </thead>
@@ -40,8 +40,8 @@ export const CustomerTable = ({ data, onClickAdd, onClickEdit, onClickDelete } :
                                     {item.imats}
                                 </td>
                                 <td className="px-6 py-2 flex justify-end items-center">
-                                    <img src={edit_icon.src} className="h-8 cursor-pointer mr-2" onClick={() => onClickEdit(item.id)}/>
-                                    <img src={delete_icon.src} className="h-7 cursor-pointer" onClick={() => onClickDelete(item.id)}/>
+                                    <img src={edit_icon.src} alt="edit_customer" className="h-8 cursor-pointer mr-2" onClick={() => onClickEdit(item.id)}/>
+                                    <img src={delete_icon.src} alt="delete_customer" className="h-7 cursor-pointer" onClick={() => onClickDelete(item.id)}/>
                                 </td>
                             </tr>
                         )

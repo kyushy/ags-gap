@@ -26,7 +26,7 @@ export const SearchBar = () => {
                     </svg>
                 </div>
                 <input type="search" name="search" id="default-search" value={searchInput} className="p-2 pr-20 pl-10 text-md italic rounded-lg placeholder-gray-400 outline-none" placeholder="Rechercher..." onChange={(e) => setSearchInput(e.target.value)}/>
-                <button type="button" className="absolute inset-y-0 right-0 flex items-center pr-3" onClick={() => handleClickCross()}>
+                <button type="button" aria-label="reset" className="absolute inset-y-0 right-0 flex items-center pr-3" onClick={() => handleClickCross()}>
                     <svg aria-hidden="true" className="w-5 h-5 text-gray-600 hover:text-black " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" clipRule="evenodd"></path>
                     </svg>
