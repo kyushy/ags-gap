@@ -13,7 +13,7 @@ export default function SignIn({ providers } : { providers : Provider[] }) {
         <div key={provider.name}>
           <button
             className="rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
-            onClick={() => signIn(provider.id)}
+            onClick={() => signIn(provider.id, { callbackUrl: '/' })}
           >
             Se connecter
           </button>
