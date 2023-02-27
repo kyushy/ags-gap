@@ -1,4 +1,4 @@
-import { Customer } from "@prisma/client";
+import type { Customer } from "@prisma/client";
 import { api } from "../../../utils/api"
 import { CustomerForm } from "../../form/customer";
 

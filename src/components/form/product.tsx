@@ -1,6 +1,6 @@
-import { Product } from "@prisma/client";
-import { Decimal } from "@prisma/client/runtime";
-import { FormEvent, useEffect, useState } from "react"
+import type { Product } from "@prisma/client";
+import type { FormEvent } from "react";
+import { useEffect, useState } from "react"
 
 
 type productFormProps = {
@@ -48,7 +48,7 @@ export const ProductForm = ({ product, onSubmit }: productFormProps) => {
                 <input type="text" name="name" value={name} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" onChange={(e) => setName(e.target.value)} />
             </div>
             <div>
-                <label htmlFor="buying" className="block mb-2 text-sm font-medium text-white">Prix d'achat</label>
+                <label htmlFor="buying" className="block mb-2 text-sm font-medium text-white">Prix d&apos;achat</label>
                 <input type="number" name="buying" value={buyingPrice} step="0.01" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" onChange={(e) => setBuyingPrice(Number(e.target.value))} />
             </div>
             <div>

@@ -1,6 +1,6 @@
-import { Provider } from "next-auth/providers"
-import { getProviders, signIn, useSession } from "next-auth/react"
-import { GetServerSideProps } from "next/types"
+import type { Provider } from "next-auth/providers"
+import { getProviders, signIn } from "next-auth/react"
+import type { GetServerSideProps } from "next/types"
 import { getServerAuthSession } from "../../server/auth"
 
 

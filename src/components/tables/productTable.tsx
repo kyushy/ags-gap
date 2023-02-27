@@ -1,4 +1,5 @@
-import { Product } from "@prisma/client";
+import type { Product } from "@prisma/client";
+import  Image from "next/image"
 import add_product from '../../assets/add_product.png'
 import edit_icon from '../../assets/edit.png'
 import delete_icon from '../../assets/trash.png'
@@ -19,11 +20,11 @@ export const ProductTable = ({ data, onClickAdd, onClickEdit, onClickDelete } : 
                     <tr>
                         <th scope="col" className="px-6 py-2">Référence</th>
                         <th scope="col" className="px-6 py-2">Nom</th>
-                        <th scope="col" className="px-6 py-2">Prix d'achat</th>
+                        <th scope="col" className="px-6 py-2">Prix d&apos;achat</th>
                         <th scope="col" className="px-6 py-2">Prix de vente</th>
                         <th scope="col" className="px-6 py-2">Quantité</th>
                         <th scope="col" className="px-6 py-2 flex justify-end">
-                            <img src={add_product.src} className="h-8 cursor-pointer" alt="add_product" onClick={() => onClickAdd()}/>
+                            <Image src={add_product} width={32} className="h-8 cursor-pointer" alt="add_product" onClick={() => onClickAdd()}/>
                         </th>
                     </tr>
                 </thead>
@@ -47,8 +48,8 @@ export const ProductTable = ({ data, onClickAdd, onClickEdit, onClickDelete } : 
                                     {item.quantity}
                                 </td>
                                 <td className="px-6 py-2 flex justify-end items-center">
-                                    <img src={edit_icon.src} alt="edit_product" className="h-8 cursor-pointer mr-2" onClick={() => onClickEdit(item.reference)}/>
-                                    <img src={delete_icon.src} alt="delete-product" className="h-7 cursor-pointer" onClick={() => onClickDelete(item.reference)}/>
+                                    <Image src={edit_icon} width={32} alt="edit_product" className="h-8 cursor-pointer mr-2" onClick={() => onClickEdit(item.reference)}/>
+                                    <Image src={delete_icon} width={32} alt="delete-product" className="h-7 cursor-pointer" onClick={() => onClickDelete(item.reference)}/>
                                 </td>
                             </tr>
                         ) 

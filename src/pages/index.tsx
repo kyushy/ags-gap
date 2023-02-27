@@ -1,5 +1,5 @@
 import { type NextPage } from "next";
-import { GetServerSideProps } from "next/types"
+import { type GetServerSideProps } from "next/types"
 import Link from "next/link";
 import { signOut } from "next-auth/react";
 import { getServerAuthSession } from "../server/auth";

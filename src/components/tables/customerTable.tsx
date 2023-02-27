@@ -1,4 +1,5 @@
-import { Customer } from "@prisma/client";
+import type { Customer } from "@prisma/client";
+import  Image from "next/image"
 import add_client from '../../assets/add_client.png'
 import edit_icon from '../../assets/edit.png'
 import delete_icon from '../../assets/trash.png'
@@ -22,7 +23,7 @@ export const CustomerTable = ({ data, onClickAdd, onClickEdit, onClickDelete } :
                         <th scope="col" className="px-6 py-2 ">Téléphone</th>
                         <th scope="col" className="px-6 py-2">Immatriculation(s)</th>
                         <th scope="col" className="px-6 py-2 flex justify-end">
-                            <img src={add_client.src} className="h-8 cursor-pointer" alt="add_customer" onClick={() => onClickAdd()}/>
+                            <Image src={add_client} width={32} className="h-8 cursor-pointer" alt="add_customer" onClick={() => onClickAdd()}/>
                         </th>
                     </tr>
                 </thead>
@@ -40,8 +41,8 @@ export const CustomerTable = ({ data, onClickAdd, onClickEdit, onClickDelete } :
                                     {item.imats}
                                 </td>
                                 <td className="px-6 py-2 flex justify-end items-center">
-                                    <img src={edit_icon.src} alt="edit_customer" className="h-8 cursor-pointer mr-2" onClick={() => onClickEdit(item.id)}/>
-                                    <img src={delete_icon.src} alt="delete_customer" className="h-7 cursor-pointer" onClick={() => onClickDelete(item.id)}/>
+                                    <Image src={edit_icon} width={32} alt="edit_customer" className="h-8 cursor-pointer mr-2" onClick={() => onClickEdit(item.id)}/>
+                                    <Image src={delete_icon} width={32} alt="delete_customer" className="h-7 cursor-pointer" onClick={() => onClickDelete(item.id)}/>
                                 </td>
                             </tr>
                         )

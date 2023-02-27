@@ -1,5 +1,6 @@
-import { Customer } from "@prisma/client";
-import { FormEvent, useEffect, useState } from "react"
+import type { Customer } from "@prisma/client";
+import type { FormEvent } from "react";
+import { useEffect, useState } from "react"
 
 
 type customerFormProps = {

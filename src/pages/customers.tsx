@@ -1,6 +1,6 @@
-import { NextPage } from "next";
+import type { NextPage } from "next";
 import { getServerAuthSession } from "../server/auth";
-import { GetServerSideProps } from "next/types"
+import type { GetServerSideProps } from "next/types"
 import { api } from "../utils/api";
 import { CustomerTable } from "../components/tables/customerTable";
 import { Spinner } from "../components/ui/spinner";
