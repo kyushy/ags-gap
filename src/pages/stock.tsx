@@ -14,7 +14,7 @@ import { ProductDeleteModal } from "../components/modal/product/product-delete";
 
 const Stock : NextPage = () => {
   const { search } = useRouter().query
-  const { data: products, isLoading: loadingProducts } = search ? api.product.search.useQuery({ searchInput: search }) : api.product.getAll.useQuery()
+  const { data: products, isLoading: loadingProducts } = search ? api.product.search.useQuery({ searchInput: search as string }) : api.product.getAll.useQuery()
   const { data: totalValue, isLoading: loadingPrices } = api.product.stockValue.useQuery();
 
   const [showCreateModal, setShowCreateModal] = useState<boolean>(false)

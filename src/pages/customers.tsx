@@ -15,7 +15,7 @@ import { CustomerDeleteModal } from "../components/modal/customer/customer-delet
 const Customers : NextPage = () => {
   const { search } = useRouter().query
 
-  const { data: customers, isLoading } = search ? api.customer.search.useQuery({ searchInput: search }) : api.customer.getAll.useQuery()
+  const { data: customers, isLoading } = search ? api.customer.search.useQuery({ searchInput: search as string }) : api.customer.getAll.useQuery()
 
   const [showCreateModal, setShowCreateModal] = useState<boolean>(false)
   const [showUpdateModal, setShowUpdateModal] = useState<boolean>(false)

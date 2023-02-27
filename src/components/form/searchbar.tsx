@@ -4,7 +4,7 @@ import { FormEvent, useState } from "react"
 export const SearchBar = () => {
     const router = useRouter();
     const { search } = router.query
-    const [searchInput, setSearchInput] = useState<string>(search ? search : '');
+    const [searchInput, setSearchInput] = useState<string>(search ? String(search) : '');
 
     const handleSubmit = (e: FormEvent) => {
         if(!searchInput.trim())
