@@ -41,8 +41,8 @@ const Stock : NextPage = () => {
         <Header title="gestion stock"/>
         <main className="flex flex-col justify-center px-16">
           {showCreateModal ? <ProductCreateModal onValidate={() => setShowCreateModal(false)} onClose={() => setShowCreateModal(false)} /> : <></>}
-          {showUpdateModal ? <ProductUpdateModal reference={selectedProduct} onValidate={() => setShowUpdateModal(false)} onClose={() => setShowUpdateModal(false)} /> : <></>}
-          {showDeleteModal ? <ProductDeleteModal reference={selectedProduct} onValidate={() => setShowDeleteModal(false)} onClose={() => setShowDeleteModal(false)} /> : <></>}
+          {showUpdateModal ? <ProductUpdateModal id={selectedProduct} onValidate={() => setShowUpdateModal(false)} onClose={() => setShowUpdateModal(false)} /> : <></>}
+          {showDeleteModal ? <ProductDeleteModal id={selectedProduct} onValidate={() => setShowDeleteModal(false)} onClose={() => setShowDeleteModal(false)} /> : <></>}
           {!loadingProducts ? 
             <ProductTable 
               data={products}
