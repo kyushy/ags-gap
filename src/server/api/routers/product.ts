@@ -9,10 +9,10 @@ export const productRouter = createTRPCRouter({
   }),
 
   get: protectedProcedure
-    .input(z.object({ reference: z.string() }))
+    .input(z.object({ id: z.string() }))
     .query(({ input, ctx }) => {
       return ctx.prisma.product.findFirst({
-        where: { reference: input.reference }
+        where: { id: input.id }
       })
   }),
 
@@ -62,6 +62,7 @@ export const productRouter = createTRPCRouter({
 
   update: protectedProcedure
     .input(z.object({
+      id: z.string(),
       reference: z.string(),
       name: z.string(),
       buyingPrice: z.number(),
@@ -70,7 +71,7 @@ export const productRouter = createTRPCRouter({
     }))
     .mutation(({ input, ctx }) => {
       return ctx.prisma.product.update({
-        where: { reference: input.reference },
+        where: { id: input.id },
         data: { 
           reference: input.reference,
           name: input.name,
@@ -82,10 +83,10 @@ export const productRouter = createTRPCRouter({
   }),
 
   delete: protectedProcedure
-    .input(z.object({ reference: z.string() }))
+    .input(z.object({ id: z.string() }))
     .mutation(({ input, ctx }) => {
       return ctx.prisma.product.delete({
-        where: { reference: input.reference }
+        where: { id: input.id }
       })
     })
 

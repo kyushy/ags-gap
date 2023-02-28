@@ -48,8 +48,8 @@ export const ProductTable = ({ data, onClickAdd, onClickEdit, onClickDelete } : 
                                     {item.quantity}
                                 </td>
                                 <td className="px-6 py-2 flex justify-end items-center">
-                                    <Image src={edit_icon} width={32} alt="edit_product" className="h-8 cursor-pointer mr-2" onClick={() => onClickEdit(item.reference)}/>
-                                    <Image src={delete_icon} width={32} alt="delete-product" className="h-7 cursor-pointer" onClick={() => onClickDelete(item.reference)}/>
+                                    <Image src={edit_icon} width={32} alt="edit_product" className="h-8 cursor-pointer mr-2" onClick={() => onClickEdit(item.id)}/>
+                                    <Image src={delete_icon} width={32} alt="delete-product" className="h-7 cursor-pointer" onClick={() => onClickDelete(item.id)}/>
                                 </td>
                             </tr>
                         ) 

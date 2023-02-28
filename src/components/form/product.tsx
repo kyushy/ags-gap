@@ -29,6 +29,7 @@ export const ProductForm = ({ product, onSubmit }: productFormProps) => {
     const handleSubmit = (e : FormEvent) => {
         e.preventDefault()
         onSubmit({
+            id: product?.id as string,
             reference: reference as string,
             name: name as string,
             buyingPrice: buyingPrice,

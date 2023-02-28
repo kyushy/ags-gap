@@ -3,14 +3,14 @@ import { api } from "../../../utils/api"
 import { ProductForm } from "../../form/product";
 
 type ProductCreateProps = {
-    reference: string;
+    id: string;
     onValidate: () => void;
     onClose: () => void;
 }
 
-export const ProductUpdateModal = ({ reference, onValidate, onClose } : ProductCreateProps) => {
+export const ProductUpdateModal = ({ id, onValidate, onClose } : ProductCreateProps) => {
     const utils = api.useContext()
-    const { data: product, isFetched } = api.product.get.useQuery({ reference })
+    const { data: product, isFetched } = api.product.get.useQuery({ id })
 
     const { mutateAsync } = api.product.update.useMutation({
         onSuccess: () => {
@@ -21,6 +21,7 @@ export const ProductUpdateModal = ({ reference, onValidate, onClose } : ProductC
 
     const handleSubmit = (p : Product) => {
         mutateAsync({
+            id: id,
             reference: p.reference,
             name: p.name,
             buyingPrice: p.buyingPrice || 0,

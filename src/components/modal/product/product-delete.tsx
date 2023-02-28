@@ -1,12 +1,12 @@
 import { api } from "../../../utils/api";
 
 type ProductDeleteProps = {
-    reference: string;
+    id: string;
     onValidate: () => void;
     onClose: () => void;
 }
 
-export const ProductDeleteModal = ({ reference, onValidate, onClose } : ProductDeleteProps) => {
+export const ProductDeleteModal = ({ id, onValidate, onClose } : ProductDeleteProps) => {
     const utils = api.useContext()
     
     const { mutateAsync } = api.product.delete.useMutation({
@@ -17,7 +17,7 @@ export const ProductDeleteModal = ({ reference, onValidate, onClose } : ProductD
     })
 
     const handleSubmit = () => {
-        mutateAsync({ reference })
+        mutateAsync({ id })
         onValidate()
     }
 

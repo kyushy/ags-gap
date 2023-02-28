@@ -75,7 +75,8 @@ model Customer {
 }
 
 model Product {
-    reference       String  @id @map("_id")
+    id              String  @id @default(cuid()) @map("_id")
+    reference       String  
     name            String
     buyingPrice     Float   @default(0)
     sellingPrice    Float   @default(0)
