@@ -19,7 +19,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
         <meta name="description" content="AGS Gap management" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="bg-gradient-to-b from-[#A1B0C3] to-[#535D82] min-h-screen">
+      <div className="bg-gradient-to-b from-[#A1B0C3] to-[#535D82] min-h-screen px-8 2xl:px-16">
         <Component {...pageProps}/>
       </div>
     </SessionProvider>

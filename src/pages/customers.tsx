@@ -40,7 +40,7 @@ const Customers : NextPage = () => {
     return(
       <>
         <Header title="fichier client"/>
-        <main className="flex flex-col justify-center px-16">
+        <main className="flex flex-col justify-center">
           {showCreateModal ? <CustomerCreateModal onValidate={() => setShowCreateModal(false)} onClose={() => setShowCreateModal(false)} /> : <></>}
           {showUpdateModal ? <CustomerUpdateModal id={selectedClient} onValidate={() => setShowUpdateModal(false)} onClose={() => setShowUpdateModal(false)} /> : <></>}
           {showDeleteModal ? <CustomerDeleteModal id={selectedClient} onValidate={() => setShowDeleteModal(false)} onClose={() => setShowDeleteModal(false)} /> : <></>}
