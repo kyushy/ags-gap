@@ -15,9 +15,9 @@ export const CustomerTable = ({ data, onClickAdd, onClickEdit, onClickDelete } :
 
     return(
         <>
-        <div className="relative overflow-x-auto shadow-md rounded-lg border border-gray-900">
+        <div className="relative overflow-x-auto overflow-y-auto max-h-[34rem] 2xl:max-h-[42rem] shadow-md rounded-lg border border-gray-900">
             <table className="w-full text-lg text-center text-gray-900">
-                <thead className="uppercase bg-[#18275B] text-white">
+                <thead className="uppercase bg-[#18275B] text-white sticky top-0">
                     <tr>
                         <th scope="col" className="px-6 py-2 ">Nom</th>
                         <th scope="col" className="px-6 py-2 ">Téléphone</th>
