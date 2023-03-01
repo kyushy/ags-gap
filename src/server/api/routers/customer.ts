@@ -4,8 +4,9 @@ import { createTRPCRouter, protectedProcedure } from "../trpc";
 
 export const customerRouter = createTRPCRouter({
 
-  getAll: protectedProcedure.query(({ ctx }) => {
-    return ctx.prisma.customer.findMany()
+  getAll: protectedProcedure.query(async ({ ctx }) => {
+    const customers = await ctx.prisma.customer.findMany()
+    return customers.length > 50 ? customers.slice(-50) : customers
   }),
 
   get: protectedProcedure
