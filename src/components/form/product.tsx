@@ -15,6 +15,7 @@ export const ProductForm = ({ product, onSubmit }: productFormProps) => {
     const [buyingPrice, setBuyingPrice] = useState<number>(0)
     const [sellingPrice, setSellingPrice] = useState<number>(0)
     const [quantity, setQuantity] = useState<number>(0)
+    const [refEq, setRefEq] = useState<string | undefined>('')
 
     useEffect(() => {
         if(product) {
@@ -23,6 +24,7 @@ export const ProductForm = ({ product, onSubmit }: productFormProps) => {
             setBuyingPrice(Number(product.buyingPrice))
             setSellingPrice(Number(product.sellingPrice))
             setQuantity(Number(product.quantity))
+            setRefEq(product.refEq)
         }
     }, [product])
 
@@ -34,7 +36,8 @@ export const ProductForm = ({ product, onSubmit }: productFormProps) => {
             name: name as string,
             buyingPrice: buyingPrice,
             sellingPrice: sellingPrice,
-            quantity: quantity
+            quantity: quantity,
+            refEq: refEq as string
         })
     }
 
@@ -59,6 +62,10 @@ export const ProductForm = ({ product, onSubmit }: productFormProps) => {
             <div>
                 <label htmlFor="quantity" className="block mb-2 text-sm font-medium text-white">Quantité</label>
                 <input type="number" name="quantity" value={quantity} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" onChange={(e) => setQuantity(Number(e.target.value))} />
+            </div>
+            <div>
+                <label htmlFor="refEq" className="block mb-2 text-sm font-medium text-white">Références équivalentes</label>
+                <textarea name="refEq" value={refEq} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" onChange={(e) => setRefEq(e.target.value)} />
             </div>
             <div className="flex justify-end">
                 <button type="submit" className="text-white bg-[#18275B] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Valider</button>

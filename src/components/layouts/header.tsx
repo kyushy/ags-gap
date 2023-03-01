@@ -19,7 +19,7 @@ export const Header = ({ title } : HeaderProps) => {
         <header className="z-20 top-0 left-0 px-16 pt-2 h-20 mb-20">
             <div className="flex w-full justify-between items-center">
                 <div className="flex items-center">
-                    <Image src={back_arrow} width={64} alt="return" className="h-16 pr-4 cursor-pointer" onClick={() => handleClickArrow()}/>
+                    <Image src={back_arrow} width={74} alt="return" className="h-16 pr-4 cursor-pointer" onClick={() => handleClickArrow()}/>
                     <h1 className="text-[#18275B] text-5xl">{title.toUpperCase()}</h1>
                 </div>
                 <SearchBar />

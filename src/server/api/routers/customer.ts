@@ -22,8 +22,8 @@ export const customerRouter = createTRPCRouter({
       return ctx.prisma.customer.findMany({
         where: {
           OR: [
-            { lastname: { contains: input.searchInput } },
-            { phoneNumber: { contains: input.searchInput } }
+            { lastname: { contains: input.searchInput, mode: 'insensitive' } },
+            { phoneNumber: { contains: input.searchInput, mode: 'insensitive' } }
           ]
         }
       })

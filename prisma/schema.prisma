@@ -81,5 +81,6 @@ model Product {
     buyingPrice     Float   @default(0)
     sellingPrice    Float   @default(0)
     quantity        Int     @default(0)
+    refEq           String
 }
 

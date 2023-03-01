@@ -20,7 +20,12 @@ export const productRouter = createTRPCRouter({
     .input(z.object({ searchInput: z.string() }))
     .query(({ input, ctx }) => {
       return ctx.prisma.product.findMany({
-        where: { reference: { contains: input.searchInput } }
+        where: {
+          OR: [
+            { reference: { contains: input.searchInput, mode: 'insensitive' } },
+            { refEq: { contains: input.searchInput, mode: 'insensitive' } }
+          ]
+        }
       })
   }),
 
@@ -46,7 +51,8 @@ export const productRouter = createTRPCRouter({
       name: z.string(),
       buyingPrice: z.number(),
       sellingPrice: z.number(),
-      quantity: z.number()
+      quantity: z.number(),
+      refEq: z.string()
     }))
     .mutation(({ input, ctx }) => {
       return ctx.prisma.product.create({
@@ -55,7 +61,8 @@ export const productRouter = createTRPCRouter({
           name: input.name,
           buyingPrice: input.buyingPrice,
           sellingPrice: input.sellingPrice,
-          quantity: input.quantity
+          quantity: input.quantity,
+          refEq: input.refEq
          }
       })
   }),
@@ -67,7 +74,8 @@ export const productRouter = createTRPCRouter({
       name: z.string(),
       buyingPrice: z.number(),
       sellingPrice: z.number(),
-      quantity: z.number()
+      quantity: z.number(),
+      refEq: z.string()
     }))
     .mutation(({ input, ctx }) => {
       return ctx.prisma.product.update({
@@ -77,7 +85,8 @@ export const productRouter = createTRPCRouter({
           name: input.name,
           buyingPrice: input.buyingPrice,
           sellingPrice: input.sellingPrice,
-          quantity: input.quantity
+          quantity: input.quantity,
+          refEq: input.refEq
          }
       })
   }),
@@ -88,6 +97,6 @@ export const productRouter = createTRPCRouter({
       return ctx.prisma.product.delete({
         where: { id: input.id }
       })
-    })
+  })
 
 });

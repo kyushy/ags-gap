@@ -26,7 +26,8 @@ export const ProductUpdateModal = ({ id, onValidate, onClose } : ProductCreatePr
             name: p.name,
             buyingPrice: p.buyingPrice || 0,
             sellingPrice: p.sellingPrice || 0,
-            quantity: p.quantity || 0
+            quantity: p.quantity || 0,
+            refEq: p.refEq
         })
         onValidate()
     }
