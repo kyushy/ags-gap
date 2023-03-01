@@ -6,7 +6,7 @@ export const productRouter = createTRPCRouter({
 
   getAll: protectedProcedure.query(async ({ ctx }) => {
     const products = await ctx.prisma.product.findMany()
-    return products.length > 50 ? products.slice(-50) : products
+    return products.length > 50 ? products.slice(-50).reverse() : products.reverse()
   }),
 
   get: protectedProcedure
