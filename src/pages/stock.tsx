@@ -55,7 +55,7 @@ const Stock : NextPage = () => {
           }
           <div className="flex justify-around bg-[#7B899F] rounded-md w-3/12 2xl:w-2/12 py-2 mt-4 border border-black text-lg italic">
             <div>Valeur totale du stock : </div>
-            <div>{!loadingPrices && totalValue}€</div>
+            <div>{!loadingPrices && totalValue?.toPrecision(4)}€</div>
           </div>
         </main>
       </>
