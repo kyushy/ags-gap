@@ -44,31 +44,31 @@ export const ProductForm = ({ product, onSubmit }: productFormProps) => {
     return(
         <form className="space-y-6" onSubmit={(e) => handleSubmit(e)}>
             <div>
-                <label htmlFor="reference" className="block mb-2 text-sm font-medium text-white">Référence</label>
-                <input type="text" name="reference" value={reference} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" onChange={(e) => setReference(e.target.value)} />
+                <label htmlFor="reference" className="mb-2 block text-sm font-medium text-white">Référence</label>
+                <input type="text" name="reference" value={reference} className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" onChange={(e) => setReference(e.target.value)} />
             </div>
             <div>
-                <label htmlFor="name" className="block mb-2 text-sm font-medium text-white">Nom</label>
-                <input type="text" name="name" value={name} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" onChange={(e) => setName(e.target.value)} />
+                <label htmlFor="name" className="mb-2 block text-sm font-medium text-white">Nom</label>
+                <input type="text" name="name" value={name} className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" onChange={(e) => setName(e.target.value)} />
             </div>
             <div>
-                <label htmlFor="buying" className="block mb-2 text-sm font-medium text-white">Prix d&apos;achat</label>
-                <input type="number" name="buying" value={buyingPrice} step="0.01" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" onChange={(e) => setBuyingPrice(Number(e.target.value))} />
+                <label htmlFor="buying" className="mb-2 block text-sm font-medium text-white">Prix d&apos;achat</label>
+                <input type="number" name="buying" value={buyingPrice} step="0.01" className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" onChange={(e) => setBuyingPrice(Number(e.target.value))} />
             </div>
             <div>
-                <label htmlFor="selling" className="block mb-2 text-sm font-medium text-white">Prix de vente</label>
-                <input type="number" name="selling" value={sellingPrice} step="0.01" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" onChange={(e) => setSellingPrice(Number(e.target.value))} />
+                <label htmlFor="selling" className="mb-2 block text-sm font-medium text-white">Prix de vente</label>
+                <input type="number" name="selling" value={sellingPrice} step="0.01" className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" onChange={(e) => setSellingPrice(Number(e.target.value))} />
             </div>
             <div>
-                <label htmlFor="quantity" className="block mb-2 text-sm font-medium text-white">Quantité</label>
-                <input type="number" name="quantity" value={quantity} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" onChange={(e) => setQuantity(Number(e.target.value))} />
+                <label htmlFor="quantity" className="mb-2 block text-sm font-medium text-white">Quantité</label>
+                <input type="number" name="quantity" value={quantity} className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" onChange={(e) => setQuantity(Number(e.target.value))} />
             </div>
             <div>
-                <label htmlFor="refEq" className="block mb-2 text-sm font-medium text-white">Références équivalentes</label>
-                <textarea name="refEq" value={refEq} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" onChange={(e) => setRefEq(e.target.value)} />
+                <label htmlFor="refEq" className="mb-2 block text-sm font-medium text-white">Références équivalentes</label>
+                <textarea name="refEq" value={refEq} className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" onChange={(e) => setRefEq(e.target.value)} />
             </div>
             <div className="flex justify-end">
-                <button type="submit" className="text-white bg-[#18275B] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Valider</button>
+                <button type="submit" className="rounded-lg bg-[#18275B] px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none focus:ring-4 focus:ring-blue-300">Valider</button>
             </div>
         </form>
     )

@@ -16,16 +16,16 @@ export const Header = ({ title } : HeaderProps) => {
     }
 
     return(
-        <header className="z-20 top-0 left-0 pt-2 h-20 mb-20">
-            <div className="flex w-full justify-between items-center">
+        <header className="top-0 left-0 z-20 mb-20 h-20 pt-2">
+            <div className="flex w-full items-center justify-between">
                 <div className="flex items-center">
-                    <Image src={back_arrow} width={74} alt="return" className="h-16 pr-4 cursor-pointer" onClick={() => handleClickArrow()}/>
-                    <h1 className="text-[#18275B] text-5xl">{title.toUpperCase()}</h1>
+                    <Image src={back_arrow} width={74} alt="return" className="h-16 cursor-pointer pr-4" onClick={() => handleClickArrow()}/>
+                    <h1 className="text-5xl text-[#18275B]">{title.toUpperCase()}</h1>
                 </div>
                 <SearchBar />
                 <Image src={logo} alt="logo" className="h-20"/>
             </div>
-            <div className="border-b-2 border-[#18275B] pt-4 w-10/12 mr-auto ml-auto"></div>
+            <div className="mx-auto w-10/12 border-b-2 border-[#18275B] pt-4"></div>
         </header>
     )
 }

@@ -53,7 +53,7 @@ const Stock : NextPage = () => {
             : 
             <Spinner />
           }
-          <div className="flex justify-around bg-[#7B899F] rounded-md w-4/12 2xl:w-3/12 py-2 mt-4 border border-black text-lg italic">
+          <div className="mt-4 flex w-4/12 justify-around rounded-md border border-black bg-[#7B899F] py-2 text-lg italic 2xl:w-3/12">
             <div>Valeur totale du stock : </div>
             <div>{!loadingPrices && new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(Number(totalValue))}</div>
           </div>

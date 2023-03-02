@@ -15,9 +15,9 @@ export const CustomerTable = ({ data, onClickAdd, onClickEdit, onClickDelete } :
 
     return(
         <>
-        <div className="relative overflow-x-auto overflow-y-auto max-h-[34rem] 2xl:max-h-[42rem] shadow-md rounded-lg border border-gray-900">
-            <table className="w-full text-lg text-center text-gray-900">
-                <thead className="uppercase bg-[#18275B] text-white sticky top-0">
+        <div className="relative max-h-[34rem] overflow-auto rounded-lg border border-gray-900 shadow-md 2xl:max-h-[42rem]">
+            <table className="w-full text-center text-lg text-gray-900">
+                <thead className="sticky top-0 bg-[#18275B] uppercase text-white">
                     <tr>
                         <th scope="col" className="px-6 py-2 ">Nom</th>
                         <th scope="col" className="px-6 py-2 ">Téléphone</th>
@@ -32,8 +32,8 @@ export const CustomerTable = ({ data, onClickAdd, onClickEdit, onClickDelete } :
                 <tbody>
                     {data?.map((item, index) => {
                         return (
-                            <tr className={index % 2 == 0 ? "bg-[#7B899F] border-gray-700" : "bg-[#909FB3] border-gray-700"} key={index}>
-                                <td scope="row" className="px-6 py-2 font-medium whitespace-nowrap">
+                            <tr className={index % 2 == 0 ? "border-gray-700 bg-[#7B899F]" : "border-gray-700 bg-[#909FB3]"} key={index}>
+                                <td scope="row" className="whitespace-nowrap px-6 py-2 font-medium">
                                     {`${item.lastname.toUpperCase()}  ${item.firstname}`}
                                 </td>
                                 <td className="px-6 py-2">
@@ -43,8 +43,8 @@ export const CustomerTable = ({ data, onClickAdd, onClickEdit, onClickDelete } :
                                     {item.imats}
                                 </td>
                                 <td className="px-6 py-2">
-                                    <div className="flex justify-end items-center">
-                                        <Image src={edit_icon} width={32} alt="edit_customer" className="h-8 cursor-pointer mr-2" onClick={() => onClickEdit(item.id)}/>
+                                    <div className="flex items-center justify-end">
+                                        <Image src={edit_icon} width={32} alt="edit_customer" className="mr-2 h-8 cursor-pointer" onClick={() => onClickEdit(item.id)}/>
                                         <Image src={delete_icon} width={32} alt="delete_customer" className="h-7 cursor-pointer" onClick={() => onClickDelete(item.id)}/>
                                     </div>
                                 </td>

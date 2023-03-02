@@ -1,11 +1,10 @@
 import type { Provider } from "next-auth/providers"
-import { getProviders, signIn, useSession } from "next-auth/react"
+import { getProviders, signIn } from "next-auth/react"
 import type { GetServerSideProps } from "next/types"
 import { getServerAuthSession } from "../../server/auth"
 
 
 export default function SignIn({ providers } : { providers : Provider[] }) {
-  const session = useSession()
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
