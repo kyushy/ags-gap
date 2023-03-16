@@ -51,7 +51,7 @@ export const CustomerForm = ({ customer, onSubmit }: customerFormProps) => {
             </div> 
             <div>
                 <label htmlFor="immat" className="mb-2 block text-sm font-medium text-white">Immat(s)</label>
-                <input type="text" name="immat" value={immat} className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 " onChange={(e) => setImmat(e.target.value)} />
+                <textarea name="immat" value={immat} className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 " onChange={(e) => setImmat(e.target.value)} />
             </div>
             <div className="flex justify-end">
                 <button type="submit" className="rounded-lg bg-[#18275B] px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none focus:ring-4 focus:ring-blue-300">Valider</button>
