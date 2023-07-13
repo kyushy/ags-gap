@@ -24,7 +24,8 @@ export const customerRouter = createTRPCRouter({
         where: {
           OR: [
             { lastname: { contains: input.searchInput, mode: 'insensitive' } },
-            { phoneNumber: { contains: input.searchInput, mode: 'insensitive' } }
+            { phoneNumber: { contains: input.searchInput, mode: 'insensitive' } },
+            { imats: { contains: input.searchInput, mode: 'insensitive' } }
           ]
         }
       })
