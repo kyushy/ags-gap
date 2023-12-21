@@ -3,6 +3,7 @@ import  Image from "next/image"
 import add_product from '../../assets/add_product.png'
 import edit_icon from '../../assets/edit.png'
 import delete_icon from '../../assets/trash.png'
+import import_icon from '../../assets/import.png'
 
 type ProductTableProps = {
     data: Product[] | undefined;
@@ -24,7 +25,10 @@ export const ProductTable = ({ data, onClickAdd, onClickEdit, onClickDelete } : 
                         <th scope="col" className="px-6 py-2">Prix de vente</th>
                         <th scope="col" className="px-6 py-2">Quantité</th>
                         <th scope="col" className="px-6 py-2">
-                            <div className="flex justify-end">
+                            <div className="flex justify-end gap-4">
+                                <a href="/exportProducts" target="_blank">
+                                    <Image src={import_icon} width={32} className="h-8 cursor-pointer" alt="imports" />
+                                </a>
                                 <Image src={add_product} width={32} className="h-8 cursor-pointer" alt="add_product" onClick={() => onClickAdd()}/>
                             </div>
                         </th>

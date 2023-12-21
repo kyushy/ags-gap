@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { createTRPCRouter, protectedProcedure } from "../trpc";
+import { createTRPCRouter, protectedProcedure, publicProcedure } from "../trpc";
 
 export const productRouter = createTRPCRouter({
 
@@ -14,6 +14,13 @@ export const productRouter = createTRPCRouter({
     .query(({ input, ctx }) => {
       return ctx.prisma.product.findFirst({
         where: { id: input.id }
+      })
+  }),
+
+  getZeroQuantity: protectedProcedure
+    .query(({ ctx }) => {
+      return ctx.prisma.product.findMany({
+        where: { quantity: 0 }
       })
   }),
 
