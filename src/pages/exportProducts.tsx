@@ -15,10 +15,10 @@ const ExportProducts : NextPage = () => {
                 <div>
                     <button onClick={() => toPDF()} type="button" className="float-right rounded-lg bg-[#18275B] px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none focus:ring-4 focus:ring-blue-300">Telecharger</button>
                 </div>   
-                <div ref={targetRef}>
+                <div ref={targetRef} className="flex gap-12">
                     {data?.map((item, index) => {
                         return(
-                            <div key={index} className="text-lg">{item.reference}  -  {item.name}</div>
+                            <div key={index} className="text-lg py-2">{item.reference}  -  {item.name}</div>
                         )
                     })}
                 </div>
