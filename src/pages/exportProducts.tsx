@@ -6,7 +6,7 @@ import { usePDF, Margin } from "react-to-pdf";
 
 const ExportProducts : NextPage = () => {
     const { data } = api.product.getZeroQuantity.useQuery();
-    const { toPDF, targetRef } = usePDF({ filename: 'restock.pdf', method: 'open', page: { margin: Margin.MEDIUM } })
+    const { toPDF, targetRef } = usePDF({ filename: 'restock.pdf', method: 'open', page: { margin: Margin.SMALL } })
 
     return(
         <>
