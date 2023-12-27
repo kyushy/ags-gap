@@ -17,6 +17,11 @@ export const productRouter = createTRPCRouter({
       })
   }),
 
+  getFullList: protectedProcedure
+    .query(({ ctx }) => {
+      return ctx.prisma.product.findMany()
+  }),
+
   getZeroQuantity: protectedProcedure
     .query(({ ctx }) => {
       return ctx.prisma.product.findMany({
