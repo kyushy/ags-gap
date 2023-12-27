@@ -7,7 +7,7 @@ import { Spinner } from "../components/ui/spinner";
 
 
 const ExportProducts : NextPage = () => {
-    const [displayFull, setDisplayFull] = useState<Boolean>(false);
+    const [displayFull, setDisplayFull] = useState<boolean>(false);
 
     const { data, isLoading } = !displayFull ? api.product.getZeroQuantity.useQuery() : api.product.getFullList.useQuery();
     const { toPDF, targetRef } = usePDF({ filename: 'restock.pdf', method: 'open', page: { margin: Margin.SMALL } })
