@@ -35,7 +35,7 @@ const ExportProducts : NextPage = () => {
                     <div ref={targetRef} className="grid grid-cols-4 gap-8">
                         {data?.map((item, index) => {
                             return(
-                                <div key={index} className="text-lg py-2">{item.reference}  -  {item.name}</div>
+                                <div key={index} className="text-lg py-2">{item.reference}  -  {item.name} {displayFull ? " - " + item.quantity : "" }</div>
                             )
                         })}
                     </div>
